@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table切换</title>
+	<style type="text/css">
+		*{margin:0; padding:0;
+			font-size:30px;
+			list-style-type:none;
+		}
+		#ds{
+			margin:20px auto;
+			width:600px;
+		}
+		h2{overflow:hidden;}
+		span{
+			float:left;
+			text-align:center;
+			cursor:pointer;
+			width:198px;
+			border:1px solid red;
+		}
+		img{
+			width:600px;
+			height:400px;
+		}
+		li{display:none;}
+		.sa{
+			background:blue;
+		}
+		.ss{
+			display:block;
+		}
+	</style>
+</head>
+<body>
+	<div id="ds">
+		<h2>
+			<span class="sa">标题一</span>
+			<span>标题二</span>
+			<span>标题三</span>
+		</h2>
+		<ul id="uls">
+			<li class="ss"><img src="1.jpg" alt=""></li>
+			<li><img src="2.jpg" alt=""></li>
+			<li><img src="3.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var uls=document.getElementById('uls');
+	var sp=document.getElementsByTagName('span');
+	var lis=uls.getElementsByTagName('li');
+	sp[0].onclick=function (){
+		sp[0].className='sa';
+		sp[1].className='';
+		sp[2].className='';
+		lis[0].className='ss';
+		lis[1].className='';
+		lis[2].className='';
+	}
+	sp[1].onclick=function (){
+		sp[0].className='';
+		sp[1].className='sa';
+		sp[2].className='';
+		lis[0].className='';
+		lis[1].className='ss';
+		lis[2].className='';
+	}
+	sp[2].onclick=function (){
+		sp[0].className='';
+		sp[1].className='';
+		sp[2].className='sa';
+		lis[0].className='';
+		lis[1].className='';
+		lis[2].className='ss';
+	}
+</script>
+</html>

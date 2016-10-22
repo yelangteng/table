@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table切换</title>
+	<style type="text/css">
+		*{margin:0; padding:0;
+			font-size:30px;
+			list-style-type:none;
+		}
+		#ds{
+			margin:20px auto;
+			width:600px;
+		}
+		h2{overflow:hidden;}
+		span{
+			float:left;
+			text-align:center;
+			cursor:pointer;
+			width:198px;
+			border:1px solid red;
+		}
+		img{
+			width:600px;
+			height:400px;
+		}
+		li{display:none;}
+	</style>
+</head>
+<body>
+	<div id="ds">
+		<h2>
+			<span>标题一</span>
+			<span>标题二</span>
+			<span>标题三</span>
+		</h2>
+		<ul id="uls">
+			<li><img src="1.jpg" alt=""></li>
+			<li><img src="2.jpg" alt=""></li>
+			<li><img src="3.jpg" alt=""></li>
+		</ul>
+	</div>
+</body>
+<script type="text/javascript">
+	var uls=document.getElementById('uls');
+	var sp=document.getElementsByTagName('span');
+	var lis=uls.getElementsByTagName('li');
+		sp[0].style.background='#ccc';
+		lis[0].style.display='block';
+		sp[0].onclick=function (){
+			sp[0].style.background='#ccc';
+			lis[0].style.display='block';
+			sp[1].style.background='';
+			lis[1].style.display='';
+			sp[2].style.background='';
+			lis[2].style.display='';
+		}
+		sp[1].onclick=function (){
+			sp[1].style.background='#ccc';
+			lis[1].style.display='block';
+			sp[0].style.background='';
+			lis[0].style.display='';
+			sp[2].style.background='';
+			lis[2].style.display='';
+		}
+		sp[2].onclick=function (){
+			sp[2].style.background='#ccc';
+			lis[2].style.display='block';
+			sp[1].style.background='';
+			lis[1].style.display='';
+			sp[0].style.background='';
+			lis[0].style.display='';
+		}
+</script>
+</html>
